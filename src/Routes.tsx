@@ -4,9 +4,11 @@ import { IEpisodesList } from './const/ContextTVShow';
 
 import Episodes from './Components/General/Episodes';
 import Home from './Components/General/Home';
+import Main from './Components/General/Main';
 
 
 export type RootStackParamList = {
+    Main: undefined;
     Home: undefined;
     Episode: { episode: IEpisodesList };
  };
@@ -21,6 +23,7 @@ export default function Routes(){
                 headerShown: false
                 }}
             >
+                <Stack.Screen name="Main" component={Main} />
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Episode" component={Episodes}/>
             </Stack.Navigator>

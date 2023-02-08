@@ -21,7 +21,6 @@ export default function Episodes({ route, navigation }: IEpisodes) {
     const [loading, setLoading] = useState(false);
     const { episode } = route.params;
 
-
     useEffect(() => {
         setLoading(true);
         // its just to get an impression of getting data.

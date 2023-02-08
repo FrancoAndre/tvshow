@@ -73,7 +73,7 @@ export default function ContextTVShow({ children }: IContextTVShow) {
  
     useEffect(() => {
         setLoading(true);
-
+        
         getInformationOfShow();
         getInformationOfSeasons();
         getInformationOfEpisodes();
@@ -86,7 +86,7 @@ export default function ContextTVShow({ children }: IContextTVShow) {
 
      function getInformationOfShow(){
         //In this, we get the information of principal screen of show
-       axios.get(endpoint+`/${selectedShowID}`)
+       axios.get(endpoint+`/shows/${selectedShowID}`)
         .then((result) => {
             setShow({
                 id: result.data.id,
@@ -102,7 +102,7 @@ export default function ContextTVShow({ children }: IContextTVShow) {
 
      function getInformationOfSeasons() {
        //Here we get the information of seasons of the show
-       axios.get(endpoint+`/${selectedShowID}/seasons`)
+       axios.get(endpoint+`/shows/${selectedShowID}/seasons`)
         .then((result) => {
             const response = result.data;
             setSeasons(response)
@@ -114,7 +114,7 @@ export default function ContextTVShow({ children }: IContextTVShow) {
 
     function getInformationOfEpisodes(){
         // and here we get the information of episodes of the show
-        axios.get(endpoint+`/${selectedShowID}/episodes?specials=1`)
+        axios.get(endpoint+`/shows/${selectedShowID}/episodes?specials=1`)
         .then((result) => {
             const episodes = result.data;
             // here, for not using map. I have decided to use a filter to select only episodes of that selected season.

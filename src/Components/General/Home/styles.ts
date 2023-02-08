@@ -9,9 +9,9 @@ export const Container = styled.ScrollView`
 export const ContainerShow = styled.View`
     width: 100%;
     display: flex;
-    padding: 20px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 `;
 
 export const Title = styled.Text`
