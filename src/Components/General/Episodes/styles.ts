@@ -43,7 +43,6 @@ export const TouchableBack = styled.TouchableOpacity`
     display: flex;
     justify-content: center;
     align-items: center;
-
 `;
 
 export const TextTouchableBack = styled.Text`

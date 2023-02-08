@@ -30,7 +30,7 @@ type TShow = {
     show : IShow;
 };
 
-interface IMain extends NativeStackScreenProps<RootStackParamList, 'Home'> {}
+interface IMain extends NativeStackScreenProps<RootStackParamList, 'Main'> {}
 
 export default function Main({ navigation }: IMain) {
     const [allShows, setAllShows] = useState<TShow[]>([]);
@@ -41,7 +41,7 @@ export default function Main({ navigation }: IMain) {
     const renderItem = ({item}: {item: TShow}) => {
         return (
                 <TextTouchableShow onPress={() => handleSelectedShow(item.show.id)}>
-                    <ImageShow objectFit="cover" style={{ width: 250, height: 200, }} source={{uri: item.show?.image?.medium}} /> 
+                    <ImageShow source={{uri: item.show?.image?.medium}} /> 
                     <TextTouchableSearch>{item?.show?.name}</TextTouchableSearch>
                 </TextTouchableShow>
         );
