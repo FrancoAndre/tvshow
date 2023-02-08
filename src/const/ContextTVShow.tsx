@@ -57,6 +57,7 @@ const defaultValue = {
 export const TVShowContext = createContext<ShowContext>(defaultValue);  
 
 export default function ContextTVShow({ children }: IContextTVShow) {
+    //selectedShowID is if we want to create a screen to get a various others shows
     const [selectedShowID, setSelectedShowID] = useState(defaultValue.selectedShowID);
     const [show, setShow] = useState(defaultValue.show)
     const [episodes, setEpisodes] = useState(defaultValue.episodes)
@@ -66,7 +67,7 @@ export default function ContextTVShow({ children }: IContextTVShow) {
 
     useEffect(()=> {
         //id 1955 is equals the  "The Powerpuff Girls" 
-        setSelectedShowID(1955)
+        setSelectedShowID(16)
         setSelectedSeason(1)
     }, [])
  
@@ -84,6 +85,7 @@ export default function ContextTVShow({ children }: IContextTVShow) {
 
 
      function getInformationOfShow(){
+        //In this, we get the information of principal screen of show
        axios.get(endpoint+`/${selectedShowID}`)
         .then((result) => {
             setShow({
@@ -99,6 +101,7 @@ export default function ContextTVShow({ children }: IContextTVShow) {
     }
 
      function getInformationOfSeasons() {
+       //Here we get the information of seasons of the show
        axios.get(endpoint+`/${selectedShowID}/seasons`)
         .then((result) => {
             const response = result.data;
@@ -110,9 +113,11 @@ export default function ContextTVShow({ children }: IContextTVShow) {
     }
 
     function getInformationOfEpisodes(){
+        // and here we get the information of episodes of the show
         axios.get(endpoint+`/${selectedShowID}/episodes?specials=1`)
         .then((result) => {
             const episodes = result.data;
+            // here, for not using map. I have decided to use a filter to select only episodes of that selected season.
             setEpisodes(episodes.filter((ep: any) => ep.season === selectedSeason))
         })
         .catch((err) => {

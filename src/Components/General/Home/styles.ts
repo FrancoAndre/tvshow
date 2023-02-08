@@ -10,7 +10,6 @@ export const ContainerShow = styled.View`
     width: 100%;
     display: flex;
     padding: 20px;
-    display: flex;
     justify-content: center;
     align-items: center;
 `;

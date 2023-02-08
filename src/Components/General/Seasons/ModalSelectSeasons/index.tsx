@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { Animated, ScrollView } from 'react-native';
-import styled from 'styled-components/native'
 import { TVShowContext } from '../../../../const/ContextTVShow';
+import styled from 'styled-components/native';
 
 import {
     BackGround,

@@ -21,6 +21,18 @@ export const Image = styled.Image`
     object-fit: cover;
 `;
 
+export const ContainerBack = styled.View`
+    height: 50px;
+    width: 100%;
+    background-color: #181818;
+    bottom: 0px;
+    position: absolute;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 export const TouchableBack = styled.TouchableOpacity`
     width: 80%;
     height: 45px;
@@ -31,9 +43,7 @@ export const TouchableBack = styled.TouchableOpacity`
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 0px;
-    position: absolute;
-    margin-bottom: 30px;
+
 `;
 
 export const TextTouchableBack = styled.Text`

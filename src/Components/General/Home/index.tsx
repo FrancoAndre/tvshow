@@ -19,7 +19,10 @@ export default function Home() {
         return <Loading />
     }else {
         return (
-            <Container>
+            <Container
+                decelerationRate="normal"
+                showsVerticalScrollIndicator={false}
+            >
                 <Header />
                 <ContainerShow>
                         { show?.image !== '' ?
