@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useState, useEffect, useContext } from 'react';
-import { FlatList, SafeAreaView, StatusBar, Image } from 'react-native';
+import { FlatList, SafeAreaView, StatusBar } from 'react-native';
 import { TVShowContext } from '../../../const/ContextTVShow';
 import { endpoint } from '../../../const/endpoint';
 import { RootStackParamList } from '../../../Routes';
@@ -14,7 +14,8 @@ import {
     InputSearch,
     TouchableSearch,
     TextTouchableSearch,
-    TextTouchableShow
+    TextTouchableShow,
+    ImageShow
 } from './styles';
 
 interface IShow {
@@ -40,7 +41,7 @@ export default function Main({ navigation }: IMain) {
     const renderItem = ({item}: {item: TShow}) => {
         return (
                 <TextTouchableShow onPress={() => handleSelectedShow(item.show.id)}>
-                    <Image style={{ width: 250, height: 200 }}  source={{uri: item.show?.image?.medium}} /> 
+                    <ImageShow objectFit="cover" style={{ width: 250, height: 200, }} source={{uri: item.show?.image?.medium}} /> 
                     <TextTouchableSearch>{item?.show?.name}</TextTouchableSearch>
                 </TextTouchableShow>
         );

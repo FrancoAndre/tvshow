@@ -8,7 +8,7 @@ export const Container = styled.View`
 
 export const ContainerSearch = styled.View`
     padding: 20px;
-    height: 70px;
+    height: 80px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -43,4 +43,10 @@ export const TextTouchableShow = styled.TouchableOpacity`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+export const ImageShow = styled.Image`
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
 `;
