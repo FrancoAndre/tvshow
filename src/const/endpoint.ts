@@ -1,1 +1,1 @@
-export const endpoint = 'https://api.tvmaze.com';
+export const endpoint = 'https://api.tvmaze.com/shows';
