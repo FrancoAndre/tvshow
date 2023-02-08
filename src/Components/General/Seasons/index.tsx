@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/core';
-import { IEpisodesList, TVShowContext } from '../../const/ContextTVShow';
+import { IEpisodesList, TVShowContext } from '../../../const/ContextTVShow';
 import ModalSelectSeasons from './ModalSelectSeasons';
 
 import { 
@@ -41,11 +41,11 @@ export default function Seasons() {
                     Episodes
                 </TextTouchableSelectionSeasons>
                 <ContainerEpisodes>
-                    {episodes.map((episode) => {
+                    {episodes.map((episode, index) => {
                         return (
-                            <TouchableSelectionEpisode key={episode.number} onPress={() => handleChangeEpisode(episode)}>
+                            <TouchableSelectionEpisode key={index} onPress={() => handleChangeEpisode(episode)}>
                                 <TextTouchableSelectionEpisode>
-                                    Episode {episode.number}
+                                   { episode.number ? `Episode ${episode.number}` : 'Special' }
                                 </TextTouchableSelectionEpisode>
                             </TouchableSelectionEpisode>
                         )

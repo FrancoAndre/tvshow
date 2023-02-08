@@ -34,7 +34,7 @@ export default function Episodes({ route, navigation }: Props) {
             <Container>
                 <Header />
                 <ContainerShow>
-                    <Title>Episode {episode.number}</Title>
+                    <Title>{ episode.number ? `Episode ${episode.number}` : 'Special' }</Title>
                     <Image source={{uri: episode?.image?.medium}} />
                     <Title>{episode.name}</Title>
                     <Description>

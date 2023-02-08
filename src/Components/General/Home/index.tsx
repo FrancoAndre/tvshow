@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Seasons from "../../Seasons";
+import Seasons from "../Seasons";
 import { TVShowContext } from "../../../const/ContextTVShow";
 import { Header } from "../../Common/Header";
 import { Loading } from "../../Common/Loading";

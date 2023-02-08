@@ -110,7 +110,7 @@ export default function ContextTVShow({ children }: IContextTVShow) {
     }
 
     function getInformationOfEpisodes(){
-        axios.get(endpoint+`/${selectedShowID}/episodes`)
+        axios.get(endpoint+`/${selectedShowID}/episodes?specials=1`)
         .then((result) => {
             const episodes = result.data;
             setEpisodes(episodes.filter((ep: any) => ep.season === selectedSeason))
