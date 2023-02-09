@@ -30,19 +30,28 @@ export const TouchableSearch = styled.TouchableOpacity`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 2px;
 `;
 
 export const TextTouchableSearch = styled.Text`
     color: white;
     font-size: 25px;
+    width: 40px;
+    text-align: center;
 `;
 
-export const TextTouchableShow = styled.TouchableOpacity`
+export const TouchableShow = styled.TouchableOpacity`
     width: 100%;
     height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+export const TextTouchableShow = styled.Text`
+    color: white;
+    font-size: 25px;
+    text-align: center;
 `;
 
 export const ImageShow = styled.Image`

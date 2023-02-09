@@ -1,11 +1,14 @@
 import { useState, useEffect, useContext } from 'react';
-import { Animated, ScrollView } from 'react-native';
+import { Animated, ScrollView, StatusBar } from 'react-native';
 import { TVShowContext } from '../../../../const/ContextTVShow';
 import styled from 'styled-components/native';
 
 import {
-    BackGround,
+    Container,
+    ContainerTitle,
     Title,
+    TouchableClose,
+    TextTouchableClose,
     TouchableSelectedSeason,
     TextTouchableSelectedSeason
 } from './styles';
@@ -15,14 +18,16 @@ export interface IModalSelectSeasons {
     setVisibleSelectSeasons: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Container = styled(Animated.View)`
-    background-color: #181818;
-    width: 80%; 
-    border-width: 1px;
-    border-radius: 5px;
-    border-color: #ddd;
-    border-bottom-width: 0px;
+const BackGround = styled(Animated.View)`
+    background-color: #181818; 
+    margin-top: 50px; 
+    width: 100%; 
+    height: 100%;
     position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 export default function ModalSelectSeasons({ visibleSelectSeasons = false, setVisibleSelectSeasons }: IModalSelectSeasons){
@@ -31,8 +36,8 @@ export default function ModalSelectSeasons({ visibleSelectSeasons = false, setVi
 
     useEffect(() => {
         Animated.timing(animation, {
-            toValue: 50,
-            duration: 500,
+            toValue: StatusBar.currentHeight || 50,
+            duration: 1000,
             useNativeDriver: false,
           }).start()
       },[animation])
@@ -48,24 +53,31 @@ export default function ModalSelectSeasons({ visibleSelectSeasons = false, setVi
 
     if(visibleSelectSeasons) {
         return (
-            <BackGround>
-                <Container style={[{marginTop: animation }]}>
-                    <Title>{show.name}</Title>
-                    <ScrollView>
-                    {
-                        seasons.map((season,index) => {
-                            return(
-                                <TouchableSelectedSeason key={index} onPress={() => handleChangeSeason(season.number)}>
-                                    <TextTouchableSelectedSeason>
-                                        Season {season.number}
-                                    </TextTouchableSelectedSeason>
-                                </TouchableSelectedSeason>
-                            )
-                        })
-                    }
+                <BackGround style={[{marginTop: animation }]}>
+                    <ScrollView style={{ width: '100%'}}>
+                        <Container>
+                            <ContainerTitle>
+                                <Title>{show.name}</Title>
+                                <TouchableClose onPress={() => setVisibleSelectSeasons(false)}>
+                                    <TextTouchableClose>x</TextTouchableClose>
+                                </TouchableClose>
+                            </ContainerTitle>
+                            
+                            {
+                                seasons.map((season,index) => {
+                                    return(
+                                        <TouchableSelectedSeason key={index} onPress={() => handleChangeSeason(season.number)}>
+                                            <TextTouchableSelectedSeason>
+                                                Season {season.number}
+                                            </TextTouchableSelectedSeason>
+                                        </TouchableSelectedSeason>
+                                    )
+                                })
+                            }
+                            
+                        </Container>
                     </ScrollView>
-                </Container>
-            </BackGround>
+                </BackGround>
         )
     }else return null;
 }

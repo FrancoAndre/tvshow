@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../../Routes';
 import { Header } from '../../Common/Header';
-import { ContainerShow, Description } from '../Home/styles';
+import { ContainerShow, Description, ContainerDescription } from '../Home/styles';
 import { Loading } from '../../Common/Loading';
 
 import {
@@ -43,9 +43,11 @@ export default function Episodes({ route, navigation }: IEpisodes) {
                         <Title>{ episode.number ? `Episode ${episode.number}` : 'Special' }</Title>
                         <Image source={{uri: episode?.image?.medium}} />
                         <Title>{episode.name}</Title>
-                        <Description>
-                            {episode.summary?.replace('<p>','').replace('</p>','').replace('<b>','').replace('</b>','')}
-                        </Description>
+                        <ContainerDescription>
+                            <Description>
+                                {episode.summary?.replace('<p>','').replace('</p>','').replace('<b>','').replace('</b>','')}
+                            </Description>
+                        </ContainerDescription>
                     </ContainerShow>
                 </ScrollView>
                 <ContainerBack>

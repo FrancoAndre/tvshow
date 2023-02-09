@@ -20,6 +20,11 @@ export const Title = styled.Text`
     margin: 10px 0px;
 `;
 
+export const ContainerDescription = styled.View`
+    width: 90%;
+    display: flex;
+`;
+
 export const Description = styled.Text`
     color: white;
     font-size: 14px;

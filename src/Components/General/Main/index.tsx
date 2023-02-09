@@ -14,6 +14,7 @@ import {
     InputSearch,
     TouchableSearch,
     TextTouchableSearch,
+    TouchableShow,
     TextTouchableShow,
     ImageShow
 } from './styles';
@@ -40,10 +41,10 @@ export default function Main({ navigation }: IMain) {
 
     const renderItem = ({item}: {item: TShow}) => {
         return (
-                <TextTouchableShow onPress={() => handleSelectedShow(item.show.id)}>
+                <TouchableShow onPress={() => handleSelectedShow(item.show.id)}>
                     <ImageShow source={{uri: item.show?.image?.medium}} /> 
-                    <TextTouchableSearch>{item?.show?.name}</TextTouchableSearch>
-                </TextTouchableShow>
+                    <TextTouchableShow>{item?.show?.name}</TextTouchableShow>
+                </TouchableShow>
         );
     };
 

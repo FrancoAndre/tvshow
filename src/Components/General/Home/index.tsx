@@ -5,15 +5,16 @@ import { Header } from "../../Common/Header";
 import { Loading } from "../../Common/Loading";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../../Routes";
+import { TextTouchableBack, TouchableBack } from "../Episodes/styles";
 
 import {
     Container,
     ContainerShow,
     Title,
     Image,
+    ContainerDescription,
     Description
 } from './styles';
-import { TextTouchableBack, TouchableBack } from "../Episodes/styles";
 
 interface IHome extends NativeStackScreenProps<RootStackParamList, 'Home'> {}
 
@@ -38,9 +39,11 @@ export default function Home({ navigation }: IHome) {
                         : null
                     }
                     <Title>{show?.name}</Title>
-                    <Description>
-                        {show?.summary?.replace('<p>','').replace('</p>','').replace('<b>','').replace('</b>','')}
-                    </Description>
+                    <ContainerDescription>
+                        <Description>
+                            {show?.summary?.replace('<p>','').replace('</p>','').replace('<b>','').replace('</b>','')}
+                        </Description>
+                    </ContainerDescription>
                 </ContainerShow>
                 <Seasons />
             </Container> 
