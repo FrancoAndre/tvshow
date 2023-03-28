@@ -4,7 +4,7 @@ export const Container = styled.ScrollView`
     background-color: ${props => props.theme.background};
     width: 100%;
     height: 100%;
-`;  
+`;
 
 export const ContainerShow = styled.View`
     width: 100%;

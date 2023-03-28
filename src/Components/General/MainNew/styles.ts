@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const ContainerScreen = styled.View`
     width: 100%;
@@ -9,7 +9,7 @@ export const ContainerScreen = styled.View`
 export const Container = styled.View`
     margin-top: 50px;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     background-color: ${props => props.theme.background};
     margin-bottom: 50px;
 `;
@@ -45,7 +45,7 @@ export const HeaderText = styled.Text`
 `;
 
 export const ContainerBody = styled.View`
-    width: 100%;    
+    width: 100%;
     height: 90%;
     flex-direction: row;
 `;

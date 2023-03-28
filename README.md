@@ -1,10 +1,13 @@
 <h1 align="center">TV SHOW</h1>
 <div align="center">
 The easier form to search your favorites shows.
-<p>Using:</p>
+## 📦 Install
+
 ```bash
 yarn install
 ```
+## 🔨 Usage
+
 ```bash
 expo start
 ```

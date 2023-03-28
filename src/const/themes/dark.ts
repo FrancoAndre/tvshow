@@ -1,5 +1,5 @@
 export default {
-    title: 'dark',
-    background: '#505050',
-    text: '#cacaca',
-}
+  title: 'dark',
+  background: '#505050',
+  text: '#cacaca',
+};

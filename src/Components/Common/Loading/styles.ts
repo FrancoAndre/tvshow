@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const LoadingContainer = styled.View`
     background-color: ${props => props.theme.background};

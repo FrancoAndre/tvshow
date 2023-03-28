@@ -1,12 +1,13 @@
+import React from 'react';
 import {
-    ContainerHeader,
-    TitleHeader,
+  ContainerHeader,
+  TitleHeader,
 } from './styles';
 
 export const Header = () => {
-    return (
-        <ContainerHeader>
-            <TitleHeader>TV SHOW</TitleHeader>
-        </ContainerHeader>
-    )
-}
+  return (
+    <ContainerHeader>
+      <TitleHeader>TV SHOW</TitleHeader>
+    </ContainerHeader>
+  );
+};

@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
     width: 100%;
@@ -22,7 +22,7 @@ export const TextTouchableSelectionSeasons = styled.Text`
 `;
 
 export const Arrow = styled.Text`
-    color: ${props => props.theme.text}; 
+    color: ${props => props.theme.text};
     transform: rotate(90deg);
     font-size: 30px;
     font-weight: bold;
