@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-    background-color: #181818; 
+    background-color: ${props => props.theme.background}; 
     margin-top: 50px; 
     width: 100%; 
     border-top-left-radius: 25px; 
@@ -19,7 +19,7 @@ export const ContainerTitle = styled.View`
 
 export const Title = styled.Text`
     font-size: 20px;
-    color: white;
+    color: ${props => props.theme.text};
     padding: 10px;
 `;
 
@@ -29,14 +29,14 @@ export const TouchableClose = styled.TouchableOpacity`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: ${props => props.theme.background};
     margin-right: 20px;
     border-radius: 50px;
 `;
 
 export const TextTouchableClose = styled.Text`
     font-size: 20px;
-    color: #181818;
+    color: ${props => props.theme.text};
     font-weight: bold;
 `;
 
@@ -45,12 +45,12 @@ export const TouchableSelectedSeason = styled.TouchableOpacity`
     height: 50px;
     display: flex;
     justify-content: center;
-    border-bottom-color: silver;
+    border-bottom-color: ${props => props.theme.text};
     border-bottom-width: 1px;
 `;
 
 
 export const TextTouchableSelectedSeason = styled.Text`
     margin-left: 20px;
-    color: white;
+    color: ${props => props.theme.text};
 `;

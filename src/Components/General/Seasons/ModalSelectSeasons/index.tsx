@@ -12,6 +12,7 @@ import {
     TouchableSelectedSeason,
     TextTouchableSelectedSeason
 } from './styles';
+import { ThemeContext } from '../../../../const/ContextTheme';
 
 export interface IModalSelectSeasons {
     visibleSelectSeasons: boolean,
@@ -19,7 +20,7 @@ export interface IModalSelectSeasons {
 }
 
 const BackGround = styled(Animated.View)`
-    background-color: #181818; 
+    background-color: ${props => props.theme.background};
     margin-top: 50px; 
     width: 100%; 
     height: 100%;
@@ -33,6 +34,7 @@ const BackGround = styled(Animated.View)`
 export default function ModalSelectSeasons({ visibleSelectSeasons = false, setVisibleSelectSeasons }: IModalSelectSeasons){
     const [animation, setAnimation] = useState(new Animated.Value(1000));
     const { seasons, setSelectedSeason, show } = useContext(TVShowContext);
+    const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
         Animated.timing(animation, {

@@ -1,10 +1,15 @@
+import { useContext, useEffect } from 'react';
 import ContextTVShow from "./src/const/ContextTVShow";
 import Routes from "./src/Routes";
+import ContextTheme from "./src/const/ContextTheme";
+
 
 export default function App() {
   return (
-    <ContextTVShow>
-      <Routes />
-    </ContextTVShow>
+      <ContextTheme>
+        <ContextTVShow>
+          <Routes />
+        </ContextTVShow>
+      </ContextTheme>
   );
 }

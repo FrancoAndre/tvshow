@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const LoadingContainer = styled.View`
-    background-color: #181818;
+    background-color: ${props => props.theme.background};
     width: 100%;
     height: 100%;
     display: flex;
@@ -12,6 +12,6 @@ export const LoadingContainer = styled.View`
 export const LoadingText = styled.Text`
     font-size: 18px;
     font-weight: bold;
-    color: white;
+    color: ${props => props.theme.text};
     margin-bottom: 20px;
 `;

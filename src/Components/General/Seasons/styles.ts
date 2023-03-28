@@ -16,13 +16,13 @@ export const TouchableSelectionSeasons = styled.TouchableOpacity`
 `;
 
 export const TextTouchableSelectionSeasons = styled.Text`
-    color: white;
+    color: ${props => props.theme.text};
     font-size: 15px;
     font-weight: bold;
 `;
 
 export const Arrow = styled.Text`
-    color: white;   
+    color: ${props => props.theme.text}; 
     transform: rotate(90deg);
     font-size: 30px;
     font-weight: bold;
@@ -43,7 +43,7 @@ export const TouchableSelectionEpisode = styled.TouchableOpacity`
 `;
 
 export const TextTouchableSelectionEpisode = styled.Text`
-    color: white;
+    color: ${props => props.theme.text};
     padding: 20px;
     display: flex;
     justify-content: center;
